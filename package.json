@@ -1,0 +1,14 @@
+{
+  "name": "api-lambda-sns-publisher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "package": "aws cloudformation package --template-file template.yaml --output-template-file output.yaml --s3-bucket api-lambda-sns-bucket",
+    "deploy": "aws cloudformation deploy --template-file output.yaml --stack-name api-lambda-sns-publisher --capabilities CAPABILITY_IAM",
+    "qd": "npm run package && npm run deploy"
+  },
+  "keywords": [],
+  "author": "Alexander Simovic",
+  "license": "MIT"
+}
